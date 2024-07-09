@@ -1,0 +1,35 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: DataManagement
+  kafka:
+    bootstrap-servers: 124.222.140.214:9092
+    consumer:
+      group-id: ist
+      enable-auto-commit: true
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  datasource:
+    url: jdbc:postgresql://124.222.140.214:5666/data_management
+    username: postgres
+    password: 123qweasd
+    driver-class-name: org.postgresql.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  data:
+    mongodb:
+      uri: mongodb://chen:woshizhu1010A@124.222.140.214:27088/data_management
+#      uri: mongodb://localhost:27017/datamanagement
+  influx:
+    url: http://124.222.140.214:8086
+    user: root
+    password: 123456
+
+
+python:
+  service:
+    url: http://124.222.140.214:6000/
+    test-url: http://202.120.40.107:5000/
